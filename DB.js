@@ -180,3 +180,11 @@ function highlightTerms(text) {
     return text.replace(/(SHORT-TERM|LONG-TERM)/g, '<strong>$1</strong>');
 }
 
+const menu = document.querySelector("#mobile-menu");
+const menuLinks = document.querySelector(".navbar__menu");
+
+menu.addEventListener('click', function() {
+  menu.classList.toggle('is-active');
+  menuLinks.classList.toggle('active');
+});
+

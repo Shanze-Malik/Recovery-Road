@@ -1,3 +1,11 @@
+const menu = document.querySelector("#mobile-menu");
+const menuLinks = document.querySelector(".navbar__menu");
+
+menu.addEventListener('click', function() {
+  menu.classList.toggle('is-active');
+  menuLinks.classList.toggle('active');
+});
+
 const rehabCenters = [
     {
         name: "Healing House Psychiatric Clinic,Drug Detoxification and Rehabilitation Centre",
@@ -28,7 +36,7 @@ const rehabCenters = [
         website: "http://najjat.org/",
     },
     {
-        name: "WADA CLINIC ,house No.E-245,Block-E,New Phawari Road,Satellite Town Back Side Holy Family hospital Rawalpindi",
+        name: "WADA CLINIC",
         rating: "4.0",
         address: "E, House E, 49/5 Block, opposite holy family hospital, Satellite Town, Rawalpindi, 46300",
         number: "0333 5433822",
@@ -85,3 +93,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     
 });
+

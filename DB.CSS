@@ -141,12 +141,15 @@ body, html {
 @media screen and (max-width: 960px) {
   .navbar__container {
     display: flex;
-    justify-content: space-between;
-    height: 80px;
+    justify-content:center;
+    height: 60px;
     z-index: 1;
-    width: 100%;
+    width: auto;
     max-width: 1300px;
-    padding: 0;
+  }
+
+  .navbar__btn {
+    box-align: "center";
   }
 
   .navbar__menu {
@@ -160,21 +163,17 @@ body, html {
     transition: all 0.5s ease;
     height: 50vh;
     z-index: -1;
-    background: #0a1128; /* Black background */
+    background: #0a1128;
   }
 
   .navbar__menu.active {
-    background: #0a1128; /* Black background */
+    background: #0a1128;
     top: 100%;
     opacity: 1;
     transition: all 0.5s ease;
-    z-index: 99;
+    z-index: 50;
     height: 50vh;
     font-size: 1.6rem;
-  }
-
-  #nav__logo {
-    padding-left: 25px;
   }
 
   .navbar__toggle .bar {
@@ -182,7 +181,7 @@ body, html {
     height: 3px;
     margin: 5px auto;
     transition: all 0.3s ease-in-out;
-    background: #fefcfb; /* Beige background */
+    background: #fefcfb;
   }
 
   .navbar__item {
@@ -231,6 +230,78 @@ body, html {
 
   #mobile-menu.is-active .bar:nth-child(3) {
     transform: translate(-8px) rotate(-45deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main__container, .main__container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+  }
+
+  .main__content, .main__content2 {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .main__content2 img {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .main__content2 h3 {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .main__content2 h4 {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  .main__content h1 {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .main__content h2 {
+    font-size: 3rem;
+  }
+
+  .main__content p {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main__content h1 {
+    font-size: 2rem;
+    margin-top: 3rem;
+  }
+
+  .main__content h2 {
+    font-size: 2rem;
+  }
+
+  .main__content2 h3 {
+    font-size: 2rem;
+    margin-top: 3rem;
+  }
+
+  .main__content2 h4 {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .main__content p {
+    margin-top: 3rem;
+    font-size: 1.5rem;
   }
 }
 
