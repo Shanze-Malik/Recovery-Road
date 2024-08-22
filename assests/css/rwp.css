@@ -142,6 +142,14 @@ body, html {
       width: auto;
       max-width: 1300px;
     }
+
+    .table{
+      display: flex;
+      justify-content:center;
+      height: auto;
+      z-index: 1;
+      width: auto;
+    }
   
     .navbar__btn {
       box-align: "center";
@@ -237,6 +245,14 @@ body, html {
       margin: 0 auto;
       height: auto;
     }
+
+    .table{
+      display: flex;
+      justify-content:center;
+      height: auto;
+      z-index: 1;
+      width: auto;
+    }
   
     .main__content, .main__content2 {
       text-align: center;
@@ -278,6 +294,14 @@ body, html {
     .main__content h1 {
       font-size: 2rem;
       margin-top: 3rem;
+    }
+
+    .table{
+      display: flex;
+      justify-content:center;
+      height: auto;
+      z-index: 1;
+      width: auto;
     }
   
     .main__content h2 {
