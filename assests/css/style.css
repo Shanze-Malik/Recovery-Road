@@ -1,5 +1,4 @@
 /* Navbar Styles */
-/* Remove default margin and padding from body and html */
 body, html {
   margin: 0;
   padding: 0;
@@ -56,6 +55,7 @@ body, html {
 
 .navbar__item {
   height: 80px;
+  position: relative; /* Add position relative to handle dropdown */
 }
 
 .navbar__links {
@@ -67,19 +67,24 @@ body, html {
   text-decoration: none;
   padding: 0 1rem;
   height: 100%;
+  cursor: pointer;
 }
 
 .navbar__item.dropdown {
+  display: flex;
   position: relative;
-  display: inline-block;
 }
 
 /* Dropdown Menu */
 .dropdown__menu {
-  display: none;
-  position: relative;
+  display: none; /* Keep dropdown hidden initially */
+  position: absolute; /* Set absolute positioning for dropdown items */
+  top: 100%;
+  left: 0;
   background-color: #0a1128;
   min-width: 160px;
+  z-index: 1000;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow for dropdown */
 }
 
 /* Remove bullets from dropdown menu */
@@ -93,7 +98,7 @@ body, html {
 .dropdown__menu .dropdown__links {
   color: #fefcfb;
   font-family: 'Gruppo', sans-serif;
-  padding: 12px 12px;
+  padding: 12px 16px;
   text-decoration: none;
   display: block;
   text-align: center;
@@ -102,6 +107,11 @@ body, html {
 /* Change background color on hover */
 .dropdown__menu .dropdown__links:hover {
   background-color: #034078;
+}
+
+/* Display dropdown on hover */
+.navbar__item.dropdown:hover .dropdown__menu {
+  display: block; /* Show dropdown menu on hover */
 }
 
 /* Show the dropdown menu on hover */
@@ -258,19 +268,27 @@ body {
 @media screen and (max-width: 960px) {
   .navbar__container {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     height: 60px;
     z-index: 1;
     width: auto;
     max-width: 1300px;
   }
 
-  .main_img--container{
-    width: auto;
+  .main_img--container {
+    background-color: #fefcfb;
+    width: 90%;
     height: auto;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     z-index: 1;
+  }
+
+  #main__img {
+    margin-top: 10%;
+    height: auto;
+    max-width: 100%;
+    background-color: #fefcfb;
   }
 
   .navbar__btn {
@@ -278,15 +296,16 @@ body {
   }
 
   .navbar__menu {
-    display: grid;
-    grid-template-columns: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0;
     width: 100%;
     position: absolute;
     top: -1000px;
     opacity: 0;
     transition: all 0.5s ease;
-    height: 50vh;
+    height: auto;
     z-index: -1;
     background: #0a1128;
   }
@@ -297,16 +316,9 @@ body {
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 50;
-    height: 50vh;
+    height: auto;
     font-size: 1.6rem;
-  }
-
-  .navbar__toggle .bar {
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    transition: all 0.3s ease-in-out;
-    background: #fefcfb;
+    padding: 20px 0;
   }
 
   .navbar__item {
@@ -315,9 +327,9 @@ body {
 
   .navbar__links {
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
     width: 100%;
-    display: table;
+    display: block;
   }
 
   #mobile-menu {
@@ -341,6 +353,11 @@ body {
   }
 
   .navbar__toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: #fefcfb;
     display: block;
     cursor: pointer;
   }
@@ -350,11 +367,11 @@ body {
   }
 
   #mobile-menu.is-active .bar:nth-child(1) {
-    transform: translate(8px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
   }
 
   #mobile-menu.is-active .bar:nth-child(3) {
-    transform: translate(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
   }
 }
 
@@ -368,12 +385,20 @@ body {
     height: auto;
   }
 
-  .main_img--container{
-    width: auto;
+  .main_img--container {
+    background-color: #fefcfb;
+    width: 95%;
     height: auto;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     z-index: 1;
+  }
+
+  #main__img {
+    margin-top: 10%;
+    height: auto;
+    max-width: 100%;
+    background-color: #fefcfb;
   }
 
   .main__content, .main__content2 {
@@ -410,6 +435,23 @@ body {
     margin-top: 1rem;
     font-size: 1rem;
   }
+
+  .navbar__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar__item {
+    width: 100%;
+  }
+
+  .navbar__links {
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    display: block;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -418,14 +460,21 @@ body {
     margin-top: 3rem;
   }
 
-  .main_img--container{
-    width: auto;
+  .main_img--container {
+    background-color: #fefcfb;
+    width: 100%;
     height: auto;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     z-index: 1;
   }
 
+  #main__img {
+    margin-top: 10%;
+    height: auto;
+    max-width: 100%;
+    background-color: #fefcfb;
+  }
 
   .main__content h2 {
     font-size: 2rem;
@@ -445,8 +494,24 @@ body {
     margin-top: 3rem;
     font-size: 1.5rem;
   }
-}
 
+  .navbar__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar__item {
+    width: 100%;
+  }
+
+  .navbar__links {
+    text-align: center;
+    padding: 0.8rem;
+    width: 100%;
+    display: block;
+  }
+}
 
 body {
   background-color: #fefcfb;
@@ -526,6 +591,11 @@ body {
   .slide {
     flex: 1 0 100%;
   }
+
+  .slide img {
+    height: auto; /* Allow height to adjust automatically */
+    max-height: 400px; /* Set a max height for medium screens */
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -534,7 +604,8 @@ body {
   }
 
   .slide img {
-    height: 200px;
+    height: 200px; /* Set a specific height for mobile screens */
+    object-fit: cover; /* Ensure image covers the area while maintaining aspect ratio */
   }
 
   .dots {

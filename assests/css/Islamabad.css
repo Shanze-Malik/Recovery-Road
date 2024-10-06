@@ -136,7 +136,7 @@ body, html {
   @media screen and (max-width: 960px) {
     .navbar__container {
       display: flex;
-      justify-content:center;
+      justify-content: center;
       height: 60px;
       z-index: 1;
       width: auto;
@@ -146,18 +146,19 @@ body, html {
     .navbar__btn {
       box-align: "center";
     }
-
-    .table{
+  
+    .table {
       display: flex;
-      justify-content:center;
+      justify-content: center;
       height: auto;
       z-index: 1;
       width: auto;
     }
   
     .navbar__menu {
-      display: grid;
-      grid-template-columns: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       margin: 0;
       width: 100%;
       position: absolute;
@@ -175,8 +176,9 @@ body, html {
       opacity: 1;
       transition: all 0.5s ease;
       z-index: 50;
-      height: 50vh;
+      height: auto;
       font-size: 1.6rem;
+      padding: 20px 0;
     }
   
     .navbar__toggle .bar {
@@ -185,6 +187,8 @@ body, html {
       margin: 5px auto;
       transition: all 0.3s ease-in-out;
       background: #fefcfb;
+      display: block;
+      cursor: pointer;
     }
   
     .navbar__item {
@@ -193,9 +197,9 @@ body, html {
   
     .navbar__links {
       text-align: center;
-      padding: 2rem;
+      padding: 1rem;
       width: 100%;
-      display: table;
+      display: block;
     }
   
     #mobile-menu {
@@ -218,21 +222,16 @@ body, html {
       margin: 0;
     }
   
-    .navbar__toggle .bar {
-      display: block;
-      cursor: pointer;
-    }
-  
     #mobile-menu.is-active .bar:nth-child(2) {
       opacity: 0;
     }
   
     #mobile-menu.is-active .bar:nth-child(1) {
-      transform: translate(8px) rotate(45deg);
+      transform: translateY(8px) rotate(45deg);
     }
   
     #mobile-menu.is-active .bar:nth-child(3) {
-      transform: translate(-8px) rotate(-45deg);
+      transform: translateY(-8px) rotate(-45deg);
     }
   }
   
@@ -245,10 +244,10 @@ body, html {
       margin: 0 auto;
       height: auto;
     }
-
-    .table{
+  
+    .table {
       display: flex;
-      justify-content:center;
+      justify-content: center;
       height: auto;
       z-index: 1;
       width: auto;
@@ -309,10 +308,10 @@ body, html {
       margin-top: 2rem;
       font-size: 1.5rem;
     }
-
-    .table{
+  
+    .table {
       display: flex;
-      justify-content:center;
+      justify-content: center;
       height: auto;
       z-index: 1;
       width: auto;
@@ -323,7 +322,6 @@ body, html {
       font-size: 1.5rem;
     }
   }
-  
 
   h1 {
     font-size: 3rem;

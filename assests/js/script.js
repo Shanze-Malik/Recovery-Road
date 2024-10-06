@@ -10,7 +10,7 @@ let slideIndex = 0;
 showSlides(slideIndex);
 
 function currentSlide(n) {
-    slideIndex = (n - 1) * 3; // Adjust for three slides
+    slideIndex = (n - 1) * 3; 
     showSlides(slideIndex);
 }
 
